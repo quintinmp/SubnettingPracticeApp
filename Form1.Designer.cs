@@ -78,7 +78,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(745, 224);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Masks
             // 
@@ -128,7 +127,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(179, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
             // textBox2
             // 
@@ -136,7 +135,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(179, 20);
             this.textBox2.TabIndex = 2;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // textBox3
             // 
@@ -144,7 +143,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 3;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -173,7 +171,6 @@
             this.octetBox1.Name = "octetBox1";
             this.octetBox1.Size = new System.Drawing.Size(100, 20);
             this.octetBox1.TabIndex = 7;
-            this.octetBox1.TextChanged += new System.EventHandler(this.octetBox1_TextChanged);
             // 
             // octetBox1R2
             // 
@@ -181,7 +178,7 @@
             this.octetBox1R2.Name = "octetBox1R2";
             this.octetBox1R2.Size = new System.Drawing.Size(100, 20);
             this.octetBox1R2.TabIndex = 8;
-            this.octetBox1R2.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+
             // 
             // octetBox1R3
             // 
@@ -231,7 +228,6 @@
             this.octetBox3.Name = "octetBox3";
             this.octetBox3.Size = new System.Drawing.Size(100, 20);
             this.octetBox3.TabIndex = 13;
-            this.octetBox3.TextChanged += new System.EventHandler(this.octectBox3_TextChanged);
             // 
             // octetBox3R2
             // 
