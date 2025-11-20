@@ -264,6 +264,7 @@ namespace WindowsFormsApp1
         public String[] CalculateNet(String[] addressToCalc, String[] subnetToCalc)
         {
             String[] networkAddOctets = new string[addressToCalc.Length];
+            int networkOct;
 
             for (int i = 0; i < addressToCalc.Length; i++)
             {
@@ -275,14 +276,21 @@ namespace WindowsFormsApp1
                 {
                     networkAddOctets[i] = "0";
                 }
-                Console.WriteLine("network address [i] : " + networkAddOctets[i]);
+                else
+                {
+                    networkOct = Int32.Parse(subnetToCalc[i]) & Int32.Parse(addressToCalc[i]);
+                    Console.WriteLine("netoworkOct: " + networkOct);
+                    networkAddOctets[i] = networkOct.ToString();
+                }
+                    Console.WriteLine("network address [i] : " + networkAddOctets[i]);
             } 
             return networkAddOctets;
         }
 
-        public String[] CalculateBroad(String[] addressToCalc, String[] subnetToCalc)
+        public String[] CalculateBroad(String[] addressToCalc, String[] subnetToCalc, String[] networkToCalc)
         {
             String[] broadcastAddOctets = new string[addressToCalc.Length];
+            int broadcastOct;
 
             for (int i = 0; i < addressToCalc.Length; i++)
             {
@@ -293,6 +301,11 @@ namespace WindowsFormsApp1
                 else if (subnetToCalc[i] == "0")
                 {
                     broadcastAddOctets[i] = "255";
+                }
+                else
+                {
+                    broadcastOct = Int32.Parse(networkToCalc[i]) | (~Int32.Parse(subnetToCalc[i]) & 0xFF);
+                    broadcastAddOctets[i] = broadcastOct.ToString();
                 }
             }
             return broadcastAddOctets;
@@ -307,7 +320,7 @@ namespace WindowsFormsApp1
 
             String[] combined = addressOctets.Concat(subnetOctets).ToArray();
             String[] networkAddress = CalculateNet(addressOctets, subnetOctets);
-            String[] broadcastAddress = CalculateBroad(addressOctets, subnetOctets);
+            String[] broadcastAddress = CalculateBroad(addressOctets, subnetOctets, networkAddress);
             Console.WriteLine("combined before network, broadcast: " + String.Join(",", combined));
             combined = combined.Concat(networkAddress).ToArray();
             combined = combined.Concat(broadcastAddress).ToArray();
