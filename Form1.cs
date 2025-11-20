@@ -20,13 +20,19 @@ namespace WindowsFormsApp1
         private int CIDRValue;
         int fontSize = 15;
         String font = "Calibri";
+        private Random rand = new Random();
 
         public Form1()
         {
-            addressToConvert = "165.245.12.88/25";
+            String[] randomIp = randomizeIP();
+            Console.WriteLine("genned IP: " + String.Join(",", randomIp));
+            addressToConvert = String.Join(".", randomIp, 0, 4) + "/" + randomIp[4];
 
             ipOnly = addressToConvert.Substring(0, addressToConvert.IndexOf('/'));
-            addressOctets = ipOnly.Split('.'); 
+            Console.WriteLine("ipOnly: " + ipOnly);
+
+            addressOctets = ipOnly.Split('.');
+            Console.WriteLine("addressOctets: " + String.Join(",", addressOctets));
             CIDRValue = int.Parse(addressToConvert.Substring(addressToConvert.IndexOf('/') + 1));
 
 
@@ -189,6 +195,23 @@ namespace WindowsFormsApp1
 
         }
 
+        public String[] randomizeIP()
+        {
+            String[] randomIPArray = new string[5];
+
+            for (int i = 0; i < 4; i++)
+            {
+                int randomOctet = rand.Next(0, 256);
+                randomIPArray[i] = randomOctet.ToString();
+            }
+
+            int randomCIDR = rand.Next(1, 33);
+            String randomCIDRStr = randomCIDR.ToString();
+            randomIPArray[4] = randomCIDRStr;
+
+            return randomIPArray;
+        }
+
         public void compareUserEntryRow1(String[] stringToBreakup)
         {
             String toCompare;
@@ -252,6 +275,7 @@ namespace WindowsFormsApp1
                 {
                     networkAddOctets[i] = "0";
                 }
+                Console.WriteLine("network address [i] : " + networkAddOctets[i]);
             } 
             return networkAddOctets;
         }
@@ -277,14 +301,18 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             subnetOctets = CalculateSubnet(CIDRValue);
+
             String[] combined = addressOctets.Concat(subnetOctets).ToArray();
             String[] networkAddress = CalculateNet(addressOctets, subnetOctets);
             String[] broadcastAddress = CalculateBroad(addressOctets, subnetOctets);
+            Console.WriteLine("combined before network, broadcast: " + String.Join(",", combined));
             combined = combined.Concat(networkAddress).ToArray();
             combined = combined.Concat(broadcastAddress).ToArray();
-            Console.WriteLine("combined array length: " + combined.Length);
             compareUserEntryRow1(combined);
+
             Console.WriteLine("network address: " + String.Join(",", networkAddress));
             Console.WriteLine("broadcast address: " + String.Join(",",  broadcastAddress));
             Console.WriteLine("subnet address: " + String.Join(",", subnetOctets));
