@@ -74,7 +74,7 @@
             this.MasksDecimal,
             this.Networks,
             this.Addresses});
-            this.dataGridView1.Location = new System.Drawing.Point(291, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(745, 224);
             this.dataGridView1.TabIndex = 0;
@@ -123,164 +123,161 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(291, 334);
+            this.textBox1.Location = new System.Drawing.Point(28, 355);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(179, 20);
             this.textBox1.TabIndex = 1;
-
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(291, 360);
+            this.textBox2.Location = new System.Drawing.Point(28, 381);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(179, 20);
             this.textBox2.TabIndex = 2;
-
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(502, 334);
+            this.textBox3.Location = new System.Drawing.Point(239, 355);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 3;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(502, 360);
+            this.textBox4.Location = new System.Drawing.Point(239, 381);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 4;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(502, 387);
+            this.textBox5.Location = new System.Drawing.Point(239, 408);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 5;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(502, 414);
+            this.textBox6.Location = new System.Drawing.Point(239, 435);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 6;
             // 
             // octetBox1
             // 
-            this.octetBox1.Location = new System.Drawing.Point(618, 335);
+            this.octetBox1.Location = new System.Drawing.Point(355, 356);
             this.octetBox1.Name = "octetBox1";
             this.octetBox1.Size = new System.Drawing.Size(100, 20);
             this.octetBox1.TabIndex = 7;
             // 
             // octetBox1R2
             // 
-            this.octetBox1R2.Location = new System.Drawing.Point(618, 361);
+            this.octetBox1R2.Location = new System.Drawing.Point(355, 382);
             this.octetBox1R2.Name = "octetBox1R2";
             this.octetBox1R2.Size = new System.Drawing.Size(100, 20);
             this.octetBox1R2.TabIndex = 8;
-
             // 
             // octetBox1R3
             // 
-            this.octetBox1R3.Location = new System.Drawing.Point(618, 387);
+            this.octetBox1R3.Location = new System.Drawing.Point(355, 408);
             this.octetBox1R3.Name = "octetBox1R3";
             this.octetBox1R3.Size = new System.Drawing.Size(100, 20);
             this.octetBox1R3.TabIndex = 9;
             // 
             // octetBox1R4
             // 
-            this.octetBox1R4.Location = new System.Drawing.Point(618, 414);
+            this.octetBox1R4.Location = new System.Drawing.Point(355, 435);
             this.octetBox1R4.Name = "octetBox1R4";
             this.octetBox1R4.Size = new System.Drawing.Size(100, 20);
             this.octetBox1R4.TabIndex = 10;
             // 
             // octetBox2
             // 
-            this.octetBox2.Location = new System.Drawing.Point(724, 335);
+            this.octetBox2.Location = new System.Drawing.Point(461, 356);
             this.octetBox2.Name = "octetBox2";
             this.octetBox2.Size = new System.Drawing.Size(100, 20);
             this.octetBox2.TabIndex = 11;
             // 
             // octetBox2R2
             // 
-            this.octetBox2R2.Location = new System.Drawing.Point(724, 359);
+            this.octetBox2R2.Location = new System.Drawing.Point(461, 380);
             this.octetBox2R2.Name = "octetBox2R2";
             this.octetBox2R2.Size = new System.Drawing.Size(100, 20);
             this.octetBox2R2.TabIndex = 12;
             // 
             // octetBox2R3
             // 
-            this.octetBox2R3.Location = new System.Drawing.Point(724, 387);
+            this.octetBox2R3.Location = new System.Drawing.Point(461, 408);
             this.octetBox2R3.Name = "octetBox2R3";
             this.octetBox2R3.Size = new System.Drawing.Size(100, 20);
             this.octetBox2R3.TabIndex = 13;
             // 
             // octetBox2R4
             // 
-            this.octetBox2R4.Location = new System.Drawing.Point(724, 414);
+            this.octetBox2R4.Location = new System.Drawing.Point(461, 435);
             this.octetBox2R4.Name = "octetBox2R4";
             this.octetBox2R4.Size = new System.Drawing.Size(100, 20);
             this.octetBox2R4.TabIndex = 13;
             // 
             // octetBox3
             // 
-            this.octetBox3.Location = new System.Drawing.Point(830, 335);
+            this.octetBox3.Location = new System.Drawing.Point(567, 356);
             this.octetBox3.Name = "octetBox3";
             this.octetBox3.Size = new System.Drawing.Size(100, 20);
             this.octetBox3.TabIndex = 13;
             // 
             // octetBox3R2
             // 
-            this.octetBox3R2.Location = new System.Drawing.Point(830, 361);
+            this.octetBox3R2.Location = new System.Drawing.Point(567, 382);
             this.octetBox3R2.Name = "octetBox3R2";
             this.octetBox3R2.Size = new System.Drawing.Size(100, 20);
             this.octetBox3R2.TabIndex = 13;
             // 
             // octetBox3R3
             // 
-            this.octetBox3R3.Location = new System.Drawing.Point(830, 387);
+            this.octetBox3R3.Location = new System.Drawing.Point(567, 408);
             this.octetBox3R3.Name = "octetBox3R3";
             this.octetBox3R3.Size = new System.Drawing.Size(100, 20);
             this.octetBox3R3.TabIndex = 13;
             // 
             // octetBox3R4
             // 
-            this.octetBox3R4.Location = new System.Drawing.Point(830, 413);
+            this.octetBox3R4.Location = new System.Drawing.Point(567, 434);
             this.octetBox3R4.Name = "octetBox3R4";
             this.octetBox3R4.Size = new System.Drawing.Size(100, 20);
             this.octetBox3R4.TabIndex = 13;
             // 
             // octetBox4
             // 
-            this.octetBox4.Location = new System.Drawing.Point(936, 336);
+            this.octetBox4.Location = new System.Drawing.Point(673, 357);
             this.octetBox4.Name = "octetBox4";
             this.octetBox4.Size = new System.Drawing.Size(100, 20);
             this.octetBox4.TabIndex = 13;
             // 
             // octetBox4R2
             // 
-            this.octetBox4R2.Location = new System.Drawing.Point(936, 362);
+            this.octetBox4R2.Location = new System.Drawing.Point(673, 383);
             this.octetBox4R2.Name = "octetBox4R2";
             this.octetBox4R2.Size = new System.Drawing.Size(100, 20);
             this.octetBox4R2.TabIndex = 13;
             // 
             // octetBox4R3
             // 
-            this.octetBox4R3.Location = new System.Drawing.Point(936, 388);
+            this.octetBox4R3.Location = new System.Drawing.Point(673, 409);
             this.octetBox4R3.Name = "octetBox4R3";
             this.octetBox4R3.Size = new System.Drawing.Size(100, 20);
             this.octetBox4R3.TabIndex = 13;
             // 
             // octetBox4R4
             // 
-            this.octetBox4R4.Location = new System.Drawing.Point(936, 414);
+            this.octetBox4R4.Location = new System.Drawing.Point(673, 435);
             this.octetBox4R4.Name = "octetBox4R4";
             this.octetBox4R4.Size = new System.Drawing.Size(100, 20);
             this.octetBox4R4.TabIndex = 13;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(618, 467);
+            this.button1.Location = new System.Drawing.Point(355, 488);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 39);
             this.button1.TabIndex = 16;
@@ -290,7 +287,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(291, 413);
+            this.button2.Location = new System.Drawing.Point(37, 424);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(170, 39);
             this.button2.TabIndex = 17;
@@ -302,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 810);
+            this.ClientSize = new System.Drawing.Size(806, 544);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.octetBox4R4);
