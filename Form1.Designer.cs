@@ -58,8 +58,6 @@
             this.octetBox4R2 = new System.Windows.Forms.TextBox();
             this.octetBox4R3 = new System.Windows.Forms.TextBox();
             this.octetBox4R4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -283,20 +281,6 @@
             this.octetBox4R4.Size = new System.Drawing.Size(100, 20);
             this.octetBox4R4.TabIndex = 13;
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(291, 388);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(179, 20);
-            this.textBox7.TabIndex = 14;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(291, 414);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(179, 20);
-            this.textBox8.TabIndex = 15;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(618, 467);
@@ -313,8 +297,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 810);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.octetBox4R4);
             this.Controls.Add(this.octetBox4R3);
             this.Controls.Add(this.octetBox4R2);
@@ -378,8 +360,6 @@
         private System.Windows.Forms.TextBox octetBox4R2;
         private System.Windows.Forms.TextBox octetBox4R3;
         private System.Windows.Forms.TextBox octetBox4R4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button1;
     }
 }

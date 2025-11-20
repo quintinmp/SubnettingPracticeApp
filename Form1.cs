@@ -13,20 +13,23 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         private String addressToConvert;
-        private String subnetMask;
+        String ipOnly;
         private String[] addressOctets;
         private String[] subnetOctets;
         private TextBox[] octetBoxes;
+        private int CIDRValue;
+        int fontSize = 15;
+        String font = "Calibri";
 
         public Form1()
         {
-            addressToConvert = "165.245.12.88/24";
-            subnetMask = "255.255.255.0";
-            addressOctets = addressToConvert.Split('.'); 
-            subnetOctets = subnetMask.Split('.');
+            addressToConvert = "165.245.12.88/25";
 
-            int fontSize = 15;
-            String font = "Calibri";
+            ipOnly = addressToConvert.Substring(0, addressToConvert.IndexOf('/'));
+            addressOctets = ipOnly.Split('.'); 
+            CIDRValue = int.Parse(addressToConvert.Substring(addressToConvert.IndexOf('/') + 1));
+
+
 
             InitializeComponent();
             dataGridView1.Rows.Add("/1", "/9", "/17", "/25", "128", "2", "128");
@@ -54,14 +57,6 @@ namespace WindowsFormsApp1
             textBox2.Text = (addressToConvert);
             textBox2.Font = new Font(font, fontSize);
             textBox2.ReadOnly = true;
-
-            textBox7.Text = ("Subnet Mask");
-            textBox7.Font = new Font(font, fontSize);
-            textBox7.ReadOnly = true;
-
-            textBox8.Text = (subnetMask);
-            textBox8.Font = new Font(font, fontSize);
-            textBox8.ReadOnly = true;
 
 
             // CONVERSION TABLE LABELS
@@ -217,6 +212,32 @@ namespace WindowsFormsApp1
             }
         }
 
+
+        public String[] CalculateSubnet(int subnetCIDR)
+        {
+            String[] subnetAddress = new string[4];
+            int subnetCIDRDivide = subnetCIDR / 8;
+            int remainder = subnetCIDR % 8;
+            int octetValue = 256 - (int)Math.Pow(2, 8 - remainder);
+
+            for (int i = 0; i < 4; i++)
+            {
+                if ( i < subnetCIDRDivide)
+                {
+                    subnetAddress[i] = "255";
+                }
+                else if (i == subnetCIDRDivide && remainder != 0)
+                {
+                    subnetAddress[i] = octetValue.ToString();
+                }
+                else
+                {
+                    subnetAddress[i] = "0";
+                }
+            }
+            return subnetAddress;
+        }
+
         public String[] CalculateNet(String[] addressToCalc, String[] subnetToCalc)
         {
             String[] networkAddOctets = new string[addressToCalc.Length];
@@ -256,6 +277,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            subnetOctets = CalculateSubnet(CIDRValue);
             String[] combined = addressOctets.Concat(subnetOctets).ToArray();
             String[] networkAddress = CalculateNet(addressOctets, subnetOctets);
             String[] broadcastAddress = CalculateBroad(addressOctets, subnetOctets);
@@ -265,6 +287,7 @@ namespace WindowsFormsApp1
             compareUserEntryRow1(combined);
             Console.WriteLine("network address: " + String.Join(",", networkAddress));
             Console.WriteLine("broadcast address: " + String.Join(",",  broadcastAddress));
+            Console.WriteLine("subnet address: " + String.Join(",", subnetOctets));
         }
     }
 }
