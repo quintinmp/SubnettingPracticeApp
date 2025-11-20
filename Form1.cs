@@ -29,10 +29,8 @@ namespace WindowsFormsApp1
             addressToConvert = String.Join(".", randomIp, 0, 4) + "/" + randomIp[4];
 
             ipOnly = addressToConvert.Substring(0, addressToConvert.IndexOf('/'));
-            Console.WriteLine("ipOnly: " + ipOnly);
 
             addressOctets = ipOnly.Split('.');
-            Console.WriteLine("addressOctets: " + String.Join(",", addressOctets));
             CIDRValue = int.Parse(addressToConvert.Substring(addressToConvert.IndexOf('/') + 1));
 
 
@@ -151,9 +149,13 @@ namespace WindowsFormsApp1
             octetBox4R4.Font = new Font(font, fontSize);
             octetBox4R4.ReadOnly = false;
 
-            // button
+            // enter button
             button1.Text = ("ENTER");
             button1.Font = new Font(font, fontSize);
+
+            // reset button
+            button2.Text = ("TRY NEW IP");
+            button2.Font = new Font(font, fontSize);
 
             //octetBoxes
             octetBoxes = new TextBox[] { octetBox1, octetBox2, octetBox3, octetBox4, octetBox1R2, octetBox2R2, octetBox3R2, octetBox4R2, octetBox1R3, octetBox2R3, octetBox3R3, octetBox4R3, octetBox1R4, octetBox2R4, octetBox3R4, octetBox4R4 };
@@ -222,7 +224,6 @@ namespace WindowsFormsApp1
             {
                 toCompare = stringToBreakup[i];
                 userEntry = octetBoxes[i].Text;
-                Console.WriteLine("to compare: " + toCompare + "    userentry: " + userEntry);
 
                 if (userEntry == toCompare)
                 {
@@ -279,10 +280,8 @@ namespace WindowsFormsApp1
                 else
                 {
                     networkOct = Int32.Parse(subnetToCalc[i]) & Int32.Parse(addressToCalc[i]);
-                    Console.WriteLine("netoworkOct: " + networkOct);
                     networkAddOctets[i] = networkOct.ToString();
                 }
-                    Console.WriteLine("network address [i] : " + networkAddOctets[i]);
             } 
             return networkAddOctets;
         }
@@ -321,14 +320,31 @@ namespace WindowsFormsApp1
             String[] combined = addressOctets.Concat(subnetOctets).ToArray();
             String[] networkAddress = CalculateNet(addressOctets, subnetOctets);
             String[] broadcastAddress = CalculateBroad(addressOctets, subnetOctets, networkAddress);
-            Console.WriteLine("combined before network, broadcast: " + String.Join(",", combined));
             combined = combined.Concat(networkAddress).ToArray();
             combined = combined.Concat(broadcastAddress).ToArray();
             compareUserEntryRow1(combined);
 
-            Console.WriteLine("network address: " + String.Join(",", networkAddress));
-            Console.WriteLine("broadcast address: " + String.Join(",",  broadcastAddress));
-            Console.WriteLine("subnet address: " + String.Join(",", subnetOctets));
+           Console.WriteLine("network address: " + String.Join(",", networkAddress));
+           Console.WriteLine("broadcast address: " + String.Join(",",  broadcastAddress));
+           Console.WriteLine("subnet address: " + String.Join(",", subnetOctets));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String[] randomIp = randomizeIP();
+            addressToConvert = String.Join(".", randomIp, 0, 4) + "/" + randomIp[4];
+            textBox2.Text = addressToConvert;
+
+            ipOnly = addressToConvert.Substring(0, addressToConvert.IndexOf('/'));
+            addressOctets = ipOnly.Split('.');
+            CIDRValue = int.Parse(addressToConvert.Substring(addressToConvert.IndexOf('/') + 1));
+
+            // Clear all textboxes
+            foreach (TextBox box in octetBoxes)
+            {
+                box.Text = "";
+                box.BackColor = Color.White;
+            }
         }
     }
 }
