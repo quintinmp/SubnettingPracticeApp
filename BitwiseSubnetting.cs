@@ -83,9 +83,20 @@ namespace WindowsFormsApp1
             dataGridView1.Rows.Add("/6", "/14", "/22", "/30", "252", "64", "4");
             dataGridView1.Rows.Add("/7", "/15", "/23", "/31", "254", "128", "2");
             dataGridView1.Rows.Add("/8", "/16", "/24", "/32", "255", "256", "1");
-            dataGridView1.Size = new Size(745, 224);
-            dataGridView1.Location = new Point(28, 79);
-
+            dataGridView1.Size = new Size(701, 198);
+            dataGridView1.Location = new Point(58, 115);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.GridColor = Color.LightGray;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.CurrentCell = null;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.ClearSelection();
+            dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = dataGridView1.ColumnHeadersDefaultCellStyle.BackColor;
             form1.Controls.Add(dataGridView1);
 
 
