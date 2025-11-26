@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         public PracticeMode currentMode;
         private BitwiseSubnetting bitwiseSubnetting;
         private MagicNumberSubnetting magicNumberSubnetting;
+        private PortMatching portMatching;
 
         private Button backButton;
 
@@ -22,7 +23,7 @@ namespace WindowsFormsApp1
             MainMenu,
             BitwiseSubnetting,
             MagicNumberSubnetting,
-            PortQuiz,
+            PortMatching,
             ProtocolMatch
         }
 
@@ -60,6 +61,12 @@ namespace WindowsFormsApp1
             magicBtn.Location = new Point(100, 200);
             magicBtn.Click += (s, e) => SwitchMode(PracticeMode.MagicNumberSubnetting);
             this.Controls.Add(magicBtn);
+
+            Button portBtn = new Button();
+            portBtn.Text = "Port Matching";
+            portBtn.Location = new Point(100, 250);
+            portBtn.Click += (s, e) => SwitchMode(PracticeMode.PortMatching);
+            this.Controls.Add(portBtn);
         }
 
         public void SwitchMode(PracticeMode newMode)
@@ -79,6 +86,10 @@ namespace WindowsFormsApp1
                 case PracticeMode.MagicNumberSubnetting:
                     magicNumberSubnetting = new MagicNumberSubnetting(this);
                     magicNumberSubnetting.SetupMagicNumberMode();
+                    break;
+                case PracticeMode.PortMatching:
+                    portMatching = new PortMatching(this);
+                    portMatching.SetupPortMatching();
                     break;
             }
         }
